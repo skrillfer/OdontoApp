@@ -41,7 +41,7 @@ async function initialize() {
     mysql.createConnection({ host: process.env.MYSQL_HOST, 
         port: process.env.MYSQL_PORT, user:  process.env.MYSQL_USER, password:  process.env.MYSQL_PASSWORD })
         .then(connection => {
-            connection.query(`CREATE DATABASE IF NOT EXISTS \`odonto-db\`;`);
+            connection.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.MYSQL_DBNAME}\`;`);
         })
 
     
