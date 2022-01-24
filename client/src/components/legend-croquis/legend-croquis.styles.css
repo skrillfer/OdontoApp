@@ -1,0 +1,36 @@
+.row-legends-croquis {
+    margin-left: 12.6%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: 3fr 3fr 5fr;
+   /* Size of items defined inside container */
+    position: relative;
+    z-index: 2;
+}
+.circle-croquis {
+    width: 54px;
+    height: 54px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 50%;
+    font-size: 11px;
+    color: #fff;
+    line-height: 53px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.circle-croquis.free {
+    background: #0e294b;
+}
+.circle-croquis.blocked {
+    background: #686c5e;
+}
+.circle-croquis.sold {
+    background: #d53032;
+}
+@media (max-width: 1125px) {
+    .row-legends-croquis {
+        margin-left: 15%;
+   }
+}

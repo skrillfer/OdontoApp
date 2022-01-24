@@ -1,0 +1,10 @@
+.clock-time {
+    letter-spacing: 3px;
+}
+.label-message {
+    color: #7a1717;
+}
+time {
+    font-weight: bold;
+    color: #333;
+}

@@ -1,0 +1,102 @@
+.space-right--medium {
+  margin-right: 0.75em;
+}
+.avatar {
+  background: #f1f1f1;
+  border-radius: 2000px;
+  height: 7em;
+  width: 7em;
+  position: relative;
+  vertical-align: middle;
+}
+.avatar__image {
+  border-radius: 2000px;
+  width: 100%;
+}
+.text-align--center {
+  text-align: center;
+}
+@media only screen and (min-width: 60em) {
+  .content--tall {
+    padding: 6em 0;
+ }
+}
+@media only screen and (min-width: 37.5em) {
+  .content {
+    padding: 3em 0;
+ }
+}
+.heading {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.heading__title {
+  color: #1d5a80;
+  font-size: 2.25em;
+  font-weight: 100;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  padding: 0.15em 0;
+  position: relative;
+}
+.heading__title--small {
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+.color--secondary {
+  color: #666 !important;
+  fill: #666 !important;
+}
+.space-top--large {
+  margin-top: 1.5em;
+}
+.color--accent {
+  color: #1d5a80 !important;
+  fill: #1d5a80 !important;
+}
+.font-weight--bold {
+  font-weight: 500;
+}
+.space--small {
+  margin: 0.375em;
+}
+.speakercontainer {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+@media (max-width: 800px) {
+  .speakercontainer {
+    margin-left: 10%;
+    margin-right: 10%;
+ }
+}
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+blockquote cite {
+  color: #999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+blockquote cite:before {
+  content: "\2014 \2009";
+}

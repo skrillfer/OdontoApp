@@ -1,0 +1,29 @@
+.col-sm-2.col-nav-bar-custom {
+  min-height: '100%';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar-custom ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 90px;
+  font-family: Roboto, serif;
+}
+.nav-bar-custom li {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.411);
+  display: block;
+  color: #333;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Change the link color on hover */
+.nav-bar-custom li:hover:not(.nav-bar-li-active) {
+  background-color: rgba(85, 85, 85, 0.075);
+}
+.nav-bar-li-active {
+  border-top: 1px rgba(0, 0, 0, 0.411);
+  background-color: rgba(85, 85, 85, 0.425);
+}

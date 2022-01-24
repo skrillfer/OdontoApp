@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+.h3-croquis {
+	 font-family: 'Roboto', sans-serif;
+	 font-size: 18px;
+	 position: relative;
+}
+ .seat-croquis {
+	 width: 17px;
+	 height: 17px;
+	 margin: -1px;
+	 font-size: 18px;
+}
+ .seat-croquis.seat-sold {
+	 color: #d53032;
+	 fill-opacity: 0.8;
+}
+ .seat-croquis.seat-free {
+	 color: #0e294b;
+}
+ .seat-croquis.seat-selected {
+	 color: green;
+}
+ .seat-croquis.seat-blocked {
+	 color: #686c5e;
+	 fill-opacity: 0.4;
+}
+ .grid-row-croquis {
+	 display: flex;
+	 flex-flow: row wrap;
+	 justify-content: flex-start;
+}
+ .grid-row-croquis.legend-stage {
+	 flex-direction: column;
+}
+ .grid-row-croquis.vip {
+	 margin-left: 265px;
+	 margin-right: 260px;
+	 justify-content: center;
+}
+ .grid-row-croquis.vip.KIM {
+	 margin-left: 14%;
+	 margin-right: 16%;
+	 justify-content: center;
+}
+ .grid-row-croquis.vip.KANO {
+	 margin-left: 14%;
+	 margin-right: 14%;
+	 justify-content: center;
+}
+ .grid-row-croquis.lounge {
+	 margin-top: 50px;
+}
+ .grid-row-croquis.lounge.KIM {
+	 margin-left: 24%;
+	 margin-right: 27.9%;
+	 justify-content: center;
+}
+ .grid-row-croquis.lounge.KANO {
+	 margin-left: 31%;
+	 margin-right: 30.4%;
+	 justify-content: center;
+}
+ .grid-row-croquis.profesionales.KIM {
+	 margin-left: 21%;
+	 margin-right: 21%;
+	 justify-content: center;
+}
+ .grid-row-croquis.profesionales.KANO {
+	 justify-content: center;
+}
+ .grid-row-croquis.estudiantes.KIM {
+	 margin-left: 21%;
+	 margin-right: 18%;
+	 justify-content: center;
+}
+ .grid-row-croquis-legends {
+	 display: flex;
+	 flex-flow: row wrap;
+	 justify-content: space-around;
+}
+ .tr-croquis, .td-croquis {
+	 font-size: 70%;
+	 text-align: center;
+	 padding: 8px;
+	 cursor: pointer;
+}
+ .tr-croquis.col-letter, .td-croquis.col-letter {
+	 font-family: 'Roboto';
+	 font-weight: bold;
+	 color: #333;
+}
+ .tr-croquis.col-number, .td-croquis.col-number {
+	 font-family: 'Roboto', cursive;
+	 color: #333;
+}
+ @media (max-width: 853px) {
+	 .img-stage-croquis {
+		 height: 5;
+		 width: 10;
+		 size: 3px;
+	}
+}
+ @media (max-width: 992px) {
+	 .grid-row-croquis.lounge {
+		 margin-left: 24%;
+		 margin-right: 24%;
+	}
+}
+ @media (max-width: 1125px) {
+	 .tr-croquis, .td-croquis {
+		 font-size: 67%;
+		 padding: 4px;
+	}
+	 .h3-croquis {
+		 font-size: 13px;
+	}
+	 .img-stage-croquis {
+		 padding-top: 7px;
+		 height: 170px;
+	}
+}
+ .filler {
+	 flex-grow: 1;
+	 background: lightgreen;
+}
+ 

@@ -1,0 +1,47 @@
+.col-auto.custom {
+  border-collapse: separate;
+  border-spacing: 15px;
+  border-style: outset;
+}
+.legend-prices {
+  display: flex;
+  min-height: 100px;
+  font-size: 15px;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.legend-prices .quantity, .legend-prices .price {
+  width: 100%;
+}
+.legend-prices .name {
+  width: 100%;
+  font-weight: bold;
+}
+.legend-prices .price {
+  font-family: 'Courier New', Courier, monospace;
+}
+/*.legend-prices{
+  //width: 28%;
+  font-size: 15px;
+  .rectangle {
+    background: black;
+    border-radius: 7px;
+    margin-top: 7px;
+    width: 142px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+ }
+  .quantity, .price {
+    width: 100%;
+ }
+  .name{
+    width: 100%;
+    font-weight: bold;
+ }
+  .price{
+    font-family: 'Courier New', Courier, monospace;
+ }
+}
+*/

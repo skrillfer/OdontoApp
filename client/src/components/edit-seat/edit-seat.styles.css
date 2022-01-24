@@ -1,0 +1,59 @@
+#overlay-edit-seat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #ccc9c9;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.9;
+  opacity: 0.99;
+  z-index: 4;
+  cursor: default;
+  overflow-y: scroll;
+}
+.one-single-payment-page-edit-seat {
+  margin-top: 15px;
+}
+.close-alert-custom-edit-seat {
+  position: static;
+  float: right;
+  width: 30px;
+  margin-right: 0px;
+  margin-top: 0px;
+  transition: all 200ms;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border-style: outset;
+  border-width: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: black;
+}
+.close-alert-custom-edit-seat:hover {
+  background-color: aliceblue;
+  color: red;
+}
+.btn-cancel-edit-seat {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background-color: #2979ff;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #f74819;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}

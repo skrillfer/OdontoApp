@@ -1,0 +1,88 @@
+.row.main-filter-datatable {
+    margin-bottom: 20px;
+}
+.etPcIV {
+    background-color: #2979ff;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 12px 12px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.div-expanded-row-report {
+    margin-left: 80px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.ClearButtonStyle {
+    height: 32px;
+    width: 12px;
+    margin-top: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: 16px;
+    padding: 6px 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.TextFieldStyle {
+    margin-top: 4px;
+    height: 32px;
+    width: 12rem;
+    border-radius: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid #e5e5e5;
+    padding: 0 32px 0 16px;
+    font-size: 13px;
+}
+.TextFieldStyle:hover {
+    cursor: pointer;
+}
+.btn-report-circle {
+    display: block;
+    color: #060680;
+    background-color: white;
+    height: 30px;
+    width: 35px;
+    font-size: 19px;
+    border: none;
+}
+.btn-report-circle.edit:active {
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+.btn-report-circle.delete {
+    color: #d81919;
+}
+.btn-report-circle.delete:active {
+    margin-bottom: 7px;
+}
+.btn-report-circle:hover {
+    cursor: pointer;
+   /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+   /* IE 5-7 */
+    filter: alpha(opacity=50);
+   /* Netscape */
+    -moz-opacity: 0.5;
+   /* Safari 1.x */
+    -khtml-opacity: 0.5;
+   /* Good browsers */
+    opacity: 0.5;
+}
+.btn-report-circle:focus {
+    outline: 0;
+}

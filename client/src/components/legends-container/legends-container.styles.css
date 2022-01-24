@@ -1,0 +1,23 @@
+.flexbox-legends-container {
+    height: 1200px;
+    width: 100%;
+    display: grid;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 370px;
+}
+.flexbox-legend-item {
+    width: 300px;
+    margin: 10px;
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+}
+.flexbox-legend-item-1 {
+    min-height: 500px;
+}
+.flexbox-legend-item-2 {
+    min-height: 500px;
+}
+.flexbox-legend-item-3 {
+    min-height: 200px;
+}

@@ -1,0 +1,67 @@
+.navbar {
+  background: 'rgba(0, 0, 0, 0.98)';
+  height: 75px;
+}
+.navbar .navbar-wrapper {
+  width: 1140px;
+  margin: auto;
+}
+.navbar .navbar-wrapper .navbar-collapse .nav-item a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 2.5;
+  padding: 10px 20px;
+  transition: all 0.2s;
+}
+.navbar .navbar-wrapper .navbar-collapse .nav-item a:hover {
+  text-decoration: none;
+  color: #f74819;
+}
+.navbar .navbar-wrapper .navbar-collapse .nav-item a.active {
+  color: #f74819;
+}
+.navbar .navbar-wrapper .navbar-collapse .btn-orange {
+  height: 100%;
+  line-height: 3;
+  text-transform: uppercase;
+  padding: 5px 24px;
+  font-weight: bold;
+}
+.navbar .navbar-wrapper .navbar-collapse.collapse {
+  background: rgba(0, 0, 0, 0.98);
+}
+.navbar .navbar-wrapper .navbar-collapse.collapsing, .navbar .navbar-wrapper .navbar-collapse.collapse.show {
+  position: relative;
+  top: 27px;
+  background: rgba(0, 0, 0, 0.98);
+}
+.navbar .navbar-wrapper .navbar-collapse.collapsing .btn-orange, .navbar .navbar-wrapper .navbar-collapse.collapse.show .btn-orange {
+  width: 100%;
+  height: max-content;
+}
+.navbar .navbar-wrapper .navbar-collapse.collapsing:after, .navbar .navbar-wrapper .navbar-collapse.collapse.show:after {
+  position: absolute;
+  content: "";
+  left: -15px;
+  right: -15px;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: -1;
+}
+.navbar .navbar-wrapper .navbar-toggler .navbar-toggler-icon:after {
+  content: "\f039";
+  font-family: "FontAwesome";
+  color: white;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .navbar .navbar-expand-md .navbar-collapse {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+ }
+}

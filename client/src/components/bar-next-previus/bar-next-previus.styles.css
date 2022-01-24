@@ -1,0 +1,25 @@
+.bar-next-previus {
+    display: flex;
+    align-self: center;
+    margin: -1rem;
+}
+.separator-bar-next-previus {
+    width: 40rem;
+}
+.next, .previus {
+    line-height: bold;
+    text-shadow: 1.5px 1.5px #dfd9d9;
+    color: rgba(0, 0, 0, 0.719);
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.next p, .previus p {
+    cursor: pointer;
+}
+.next :hover, .previus :hover {
+    background-color: rgba(225, 231, 231, 0.596);
+}
+.next :active, .previus :active {
+    background-color: rgba(189, 192, 192, 0.596);
+}

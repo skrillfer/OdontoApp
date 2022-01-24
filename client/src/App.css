@@ -1,0 +1,23 @@
+ @import 'assets/styles/_navbar.css';
+ @import 'assets/styles/_footer.css';
+ @import 'assets/styles/landingapge/index.css';
+ @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900&display=swap');
+ 
+ body {
+	 font-family: 'Roboto', sans-serif;
+	 color: #474747;
+	 position: relative;
+	 min-width: 200px;
+}
+ body main {
+	 padding-top: 75px;
+}
+ body .btn-orange {
+	 background-color: #f74819;
+	 color: white;
+	 transition: all 0.2s;
+}
+ body .btn-orange:hover {
+	 background-color: #f86740;
+}
+ 

@@ -1,0 +1,514 @@
+.landingpage .header {
+  min-height: 670px;
+  position: relative;
+  background: black;
+  text-align: center;
+  overflow-x: hidden;
+}
+.landingpage .header .background {
+  background-image: url(/img/header_bg.jpg);
+  opacity: 0.25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 25 ")";
+  filter: alpha(opacity=25);
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  filter: blur(8px);
+}
+.landingpage .header .background.bg-2 {
+  background-image: url(/img/header_bg2.jpg);
+}
+.landingpage .header .background.bg-3 {
+  background-image: url(/img/bannerprincipal.jpg);
+  background-position: bottom center;
+}
+.landingpage .header .logo h1 {
+  border: 4px solid white;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.5em;
+  font-size: 2em;
+  letter-spacing: 8px;
+  margin-top: 100px;
+}
+.landingpage .header .logo h2 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.7em;
+  color: white;
+  margin-top: 2em;
+}
+.landingpage .header .event-info ul {
+  -webkit-animation-name: zoomIn;
+  -ms-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.9s;
+  -ms-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+  -webkit-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 0;
+  margin: 0 -0.625rem;
+  display: flex;
+  text-align: center;
+ /* margin: auto;
+  */
+  justify-content: center;
+  margin-top: 3.25em;
+}
+.landingpage .header .event-info ul li {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding-bottom: 0px;
+  border-right: 1px solid #404040;
+  list-style: none;
+  padding: 5px 50px;
+}
+.landingpage .header .event-info ul li i.fa {
+  color: #f74819;
+  margin-right: 20px;
+}
+.landingpage .header .event-info h1 {
+  color: white;
+  font-size: 2.2em;
+  font-weight: 400;
+  margin-top: 50px;
+}
+.landingpage .header .event-info h2 {
+  margin-top: 20px;
+  font-size: 1.3em;
+  color: #bfbfbf;
+}
+.landingpage .header .event-info h3 {
+  margin-top: 10px;
+  font-size: 1.8em;
+  color: #bfbfbf;
+}
+.landingpage .section {
+  padding: 3em 0;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.landingpage .section h2 {
+  position: relative;
+  margin-bottom: 3em;
+  display: inline-block;
+  line-height: 1.4;
+  font-size: 2.32rem;
+  font-weight: 400;
+}
+.landingpage .section h2:after {
+  background: #e6e6e6;
+  height: 3px;
+  width: 100%;
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -1.5em;
+}
+.landingpage .cta {
+  width: 100%;
+  min-height: 160px;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  padding: 3em 0;
+  border-bottom: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+.landingpage .cta .background {
+  background-image: url(/img/mailing.jpg);
+  background-position: 50% 50%;
+  opacity: 0.15;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 15 ")";
+  filter: alpha(opacity=15);
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+.landingpage .cta .join {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
+  position: relative;
+  margin-top: 15px;
+}
+.landingpage .cta .btn-orange {
+  font-size: 1.2em;
+  padding: 10px 55px;
+}
+.landingpage .contact {
+  background: #efefef;
+  padding-bottom: 100px;
+  margin-bottom: 0;
+}
+.landingpage .contact form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+  border-radius: 14px;
+  background: white;
+  padding: 30px;
+  box-shadow: 2px 3px 8px #adadad;
+}
+.landingpage .contact form .btn-orange {
+  font-size: 1.4rem;
+  padding: 10px 69px;
+  margin: auto;
+  margin-top: 20px;
+}
+.landingpage .courses-info .card {
+  border-radius: 14px;
+}
+@media screen and (max-width: 1200px) {
+  .landingpage .header {
+    padding-bottom: 60px;
+ }
+  .landingpage .header .event-info ul {
+    flex-flow: wrap;
+ }
+  .landingpage .header .event-info ul li {
+    margin: 0.5em 0;
+    width: 50%;
+ }
+  .landingpage .header .event-info ul li:nth-child(even) {
+    border-right: none;
+ }
+  .landingpage .header .event-info ul li table {
+    margin: auto;
+ }
+}
+@media screen and (max-width: 668px) {
+  .landingpage .header {
+    padding-bottom: 60px;
+    padding-right: 40px;
+    padding-left: 40px;
+ }
+  .landingpage .header .logo h1 {
+    font-size: 1.8em;
+ }
+  .landingpage .header .event-info h1 {
+    font-size: 1.9em;
+ }
+  .landingpage .header .event-info h2 {
+    font-size: 1.1em;
+ }
+}
+@media screen and (max-width: 576px) {
+  .landingpage .header .logo {
+    border: 0px;
+ }
+  .landingpage .header .event-info ul li {
+    width: 100%;
+    border-right: none;
+ }
+  .landingpage .courses-info {
+    overflow: hidden;
+    padding-left: 15px;
+    width: 95%;
+    padding-top: 50px;
+ }
+  .landingpage .courses-info .card-wrapper .card {
+    margin: 10px 42px;
+ }
+}
+hr.solid-divider {
+  border-top: 2px solid #999;
+  box-shadow: #404040;
+}
+.landingpage .header {
+  min-height: 670px;
+  position: relative;
+  background: black;
+  text-align: center;
+  overflow-x: hidden;
+}
+.landingpage .header .background {
+  background-image: url(/img/header_bg.jpg);
+  opacity: 0.25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 25 ")";
+  filter: alpha(opacity=25);
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  filter: blur(8px);
+}
+.landingpage .header .background.bg-2 {
+  background-image: url(/img/header_bg2.jpg);
+}
+.landingpage .header .background.bg-3 {
+  background-image: url(/img/bannerprincipal.jpg);
+  background-position: bottom center;
+}
+.landingpage .header .logo h1 {
+  border: 4px solid white;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.5em;
+  font-size: 2em;
+  letter-spacing: 8px;
+  margin-top: 100px;
+}
+.landingpage .header .logo h2 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.7em;
+  color: white;
+  margin-top: 2em;
+}
+.landingpage .header .event-info ul {
+  -webkit-animation-name: zoomIn;
+  -ms-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.9s;
+  -ms-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+  -webkit-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 0;
+  margin: 0 -0.625rem;
+  display: flex;
+  text-align: center;
+ /* margin: auto;
+  */
+  justify-content: center;
+  margin-top: 3.25em;
+}
+.landingpage .header .event-info ul li {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding-bottom: 0px;
+  border-right: 1px solid #404040;
+  list-style: none;
+  padding: 5px 50px;
+}
+.landingpage .header .event-info ul li i.fa {
+  color: #f74819;
+  margin-right: 20px;
+}
+.landingpage .header .event-info h1 {
+  color: white;
+  font-size: 2.2em;
+  font-weight: 400;
+  margin-top: 50px;
+}
+.landingpage .header .event-info h2 {
+  margin-top: 20px;
+  font-size: 1.3em;
+  color: #bfbfbf;
+}
+.landingpage .header .event-info h3 {
+  margin-top: 10px;
+  font-size: 1.8em;
+  color: #bfbfbf;
+}
+.landingpage .section {
+  padding: 3em 0;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.landingpage .section h2 {
+  position: relative;
+  margin-bottom: 3em;
+  display: inline-block;
+  line-height: 1.4;
+  font-size: 2.32rem;
+  font-weight: 400;
+}
+.landingpage .section h2:after {
+  background: #e6e6e6;
+  height: 3px;
+  width: 100%;
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -1.5em;
+}
+.landingpage .cta {
+  width: 100%;
+  min-height: 160px;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  padding: 3em 0;
+  border-bottom: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+.landingpage .cta .background {
+  background-image: url(/img/mailing.jpg);
+  background-position: 50% 50%;
+  opacity: 0.15;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 15 ")";
+  filter: alpha(opacity=15);
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+.landingpage .cta .join {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
+  position: relative;
+  margin-top: 15px;
+}
+.landingpage .cta .btn-orange {
+  font-size: 1.2em;
+  padding: 10px 55px;
+}
+.landingpage .contact {
+  background: #efefef;
+  padding-bottom: 100px;
+  margin-bottom: 0;
+}
+.landingpage .contact form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+  border-radius: 14px;
+  background: white;
+  padding: 30px;
+  box-shadow: 2px 3px 8px #adadad;
+}
+.landingpage .contact form .btn-orange {
+  font-size: 1.4rem;
+  padding: 10px 69px;
+  margin: auto;
+  margin-top: 20px;
+}
+.landingpage .courses-info .card {
+  border-radius: 14px;
+}
+@media screen and (max-width: 1200px) {
+  .landingpage .header {
+    padding-bottom: 60px;
+ }
+  .landingpage .header .event-info ul {
+    flex-flow: wrap;
+ }
+  .landingpage .header .event-info ul li {
+    margin: 0.5em 0;
+    width: 50%;
+ }
+  .landingpage .header .event-info ul li:nth-child(even) {
+    border-right: none;
+ }
+  .landingpage .header .event-info ul li table {
+    margin: auto;
+ }
+}
+@media screen and (max-width: 668px) {
+  .landingpage .header {
+    padding-bottom: 60px;
+    padding-right: 40px;
+    padding-left: 40px;
+ }
+  .landingpage .header .logo h1 {
+    font-size: 1.8em;
+ }
+  .landingpage .header .event-info h1 {
+    font-size: 1.9em;
+ }
+  .landingpage .header .event-info h2 {
+    font-size: 1.1em;
+ }
+}
+@media screen and (max-width: 576px) {
+  .landingpage .header .logo {
+    border: 0px;
+ }
+  .landingpage .header .event-info ul li {
+    width: 100%;
+    border-right: none;
+ }
+  .landingpage .courses-info {
+    overflow: hidden;
+    padding-left: 15px;
+    width: 95%;
+    padding-top: 50px;
+ }
+  .landingpage .courses-info .card-wrapper .card {
+    margin: 10px 42px;
+ }
+}
+hr.solid-divider {
+  border-top: 2px solid #999;
+  box-shadow: #404040;
+}

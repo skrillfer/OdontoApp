@@ -1,0 +1,19 @@
+.thead-details-checkout {
+   background-color: #d1d1d1;
+}
+.table td, tr {
+   text-align: center;
+}
+#FrmCheckout {
+   width: 100%;
+   background-color: blanchedalmond;
+}
+.span-12.prepend-6 {
+   padding-left: 0;
+   margin: 0 auto;
+}
+.button:active {
+   background-color: #3e8e41;
+   box-shadow: 0 4px #141414;
+   transform: translateY(1px);
+}
