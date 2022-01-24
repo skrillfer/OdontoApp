@@ -36,7 +36,7 @@ resource "aws_s3_bucket" "enterprise_backend_state" {
 
 #LOOKING - Dynamo DB for storing the log information
 resource "aws_dynamodb_table" "enterprise_backend_lock" {
-  name = "dev_application_odonto_locks"
+  name = "dev_application_odonto_locks2"
   billing_mode = "PAY_PER_REQUEST"
   hash_key = "LockID"
   attribute {

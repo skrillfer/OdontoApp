@@ -13,7 +13,7 @@ terraform {
     #key = "dev/07-backend-state/user/backend-state"
     key = "odonto/backend-state"
     region = "us-east-2"
-    dynamodb_table = "dev_application_locks"
+    dynamodb_table = "dev_application_odonto_locks2"
     encrypt = true
   }
 }
@@ -94,7 +94,8 @@ resource "aws_instance" "http_server" {
       "sudo service docker start",// start docker service
       "sudo usermod -a -G docker ec2-user", // add user to docker group
       "sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose",
-      "sudo chmod +x /usr/local/bin/docker-compose"
+      "sudo chmod +x /usr/local/bin/docker-compose",
+      "sudo yum install git -y"
       # "echo Welcome to Guatemala - Virtual Server is at ${self.public_dns} | sudo tee /var/www/html/index.html"// copy a file
     ]
   }
