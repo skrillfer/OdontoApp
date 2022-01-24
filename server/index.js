@@ -13,6 +13,9 @@ var bcrypt = require('bcrypt');
 const cors = require('cors');
 var convert = require('xml-js');
 var sha1 = require('sha1');
+const mysql = require('mysql2/promise');
+
+initialize();
 
 // var enviroment = "marlin"
 var enviroment = "ecm"
@@ -30,10 +33,23 @@ var session = require("express-session")({
         expires: 600000
     }
 });
-
 const { Sequelize, Model, DataTypes } = require('sequelize');
-var sequelize = new Sequelize('books','MYSQL_USER', 'MYSQL_PASSWORD', {
-    host: 'mysql_db',
+
+let sequelize = null;
+async function initialize() {
+    // create db if it doesn't already exist
+    mysql.createConnection({ host: process.env.MYSQL_HOST, 
+        port: process.env.MYSQL_PORT, user:  process.env.MYSQL_USER, password:  process.env.MYSQL_PASSWORD })
+        .then(connection => {
+            connection.query(`CREATE DATABASE IF NOT EXISTS \`odonto-db\`;`);
+        })
+
+    
+}
+
+sequelize = new Sequelize(process.env.MYSQL_DBNAME,process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
+    host: process.env.MYSQL_HOST,
+    port: process.env.MYSQL_PORT,
     dialect: 'mysql',
 
     pool: {
