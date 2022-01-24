@@ -21,7 +21,7 @@ services:
       MYSQL_HOST: localhost
 
   nginx:
-    image: skrillfer/odontoapp-nginx:1.2.1
+    image: skrillfer/odontoapp-nginx:1.2.2
     depends_on:
       - api
       # - client
@@ -33,7 +33,7 @@ services:
       - "80:80"
       # 3050
   api:
-    image: skrillfer/odontoapp-api:1.2.1
+    image: skrillfer/odontoapp-api:1.2.2
     build:
       dockerfile: Dockerfile
       context: "./server"
