@@ -48,6 +48,7 @@ export class App extends React.Component{
     dotenv.config();
     console.log(process.env.REACT_APP_BASE_URL)
     super(props);
+    console.log('TESTES')
     this.state  = { ...initialState };
     if (process.env.NODE_ENV === 'development') {
       console.log(process.env.NODE_ENV);
@@ -60,7 +61,8 @@ export class App extends React.Component{
     }else {
       console.log(process.env.NODE_ENV);
       console.log(process.env.REACT_APP_SOCKET_URL);
-      socket = io.connect(process.env.REACT_APP_SOCKET_URL);
+      // socket = io.connect(process.env.REACT_APP_SOCKET_URL);
+      socket = io({ path: process.env.REACT_APP_SOCKET_URL });
     }
 
     socket.on( 'connect', function () {
