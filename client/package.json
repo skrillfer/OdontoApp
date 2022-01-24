@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "craco-less": "^2.0.0",
     "dotenv": "^8.6.0",
     "env-cmd": "^10.0.1",
     "less": "^4.1.2",
