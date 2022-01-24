@@ -1,6 +1,7 @@
 import React from 'react';
 import Spinner from 'react-spinkit';
 import BasicTable from '../datatable/datatable.component';
+import { ROUTES_APP } from "../../assets/routes.constants";
 
 import './report.styles.css';
 class Report extends React.Component{
@@ -13,7 +14,7 @@ class Report extends React.Component{
         }
     }
     componentDidMount(){
-        fetch(process.env.REACT_APP_BASE_URL + "/report", {
+        fetch(process.env.REACT_APP_BASE_URL + ROUTES_APP.REPORT, {
             method: "post",
             mode: 'cors',
             headers: {
@@ -54,7 +55,7 @@ class Report extends React.Component{
                     style={{height:'30px', width:'30px'}}
                 />
                 </div>):seats_solds.length?
-                    <div className='container-fluid'>   
+                    <div className='container-fluid custom-container'>   
                         <>
                             <h3>Asientos Vendidos</h3>
                             {/*<span className='span-total'>Total:</span>*/}

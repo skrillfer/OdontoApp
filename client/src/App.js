@@ -36,6 +36,7 @@ import { selectAlertItems } from './redux/alert/alert.selectors';
 import { CONST_SEAT_STATES, CONST_SPEAKERS_ENUM,STRINGS_ALERTS } from './assets/constants';
 
 import  "./App.css"
+import { ROUTES_APP } from "./assets/routes.constants";
 
 let amountConected=0;
 let socket;
@@ -46,23 +47,17 @@ export class App extends React.Component{
 
   constructor(props){
     dotenv.config();
-    console.log(process.env.REACT_APP_BASE_URL)
     super(props);
-    console.log('TESTES')
     this.state  = { ...initialState };
     if (process.env.NODE_ENV === 'development') {
-      console.log(process.env.NODE_ENV);
-      console.log(process.env.REACT_APP_SOCKET_URL)
       // socket = io({ path: "/socket.io" });
       socket = io({ path: process.env.REACT_APP_SOCKET_URL });
 
       // socket = io.connect(process.env.REACT_APP_SOCKET_URL || 'http://api', { forceNew: true, path: '/ws/socket.io' });
       // console.log(socket);
     }else {
-      console.log(process.env.NODE_ENV);
-      console.log(process.env.REACT_APP_SOCKET_URL);
       // socket = io.connect(process.env.REACT_APP_SOCKET_URL);
-      socket = io({ path: process.env.REACT_APP_SOCKET_URL });
+      socket = io({ path: "/socket.io" });
     }
 
     socket.on( 'connect', function () {
@@ -70,7 +65,7 @@ export class App extends React.Component{
     });
   
     socket.on( 'disconnect', function () {
-      if(window.location.pathname==='/reservation' || window.location.pathname==='/checkout'){
+      if(window.location.pathname===ROUTES_APP.RESERVATION || window.location.pathname===ROUTES_APP.CHECKOUT){
         amountConected++;
         if(amountConected>=1){
           const {DISCONNECT_SOCKET,DISCONNECT_SOCKET_NOT_USER_LOGGED} = STRINGS_ALERTS;
@@ -88,7 +83,6 @@ export class App extends React.Component{
     });
 
     socket.emit('connected',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null },(initialStage)=>{
-      console.log(initialStage)
       initialStage.forEach(seat=>{
         setStateSeat(seat);
       });
@@ -139,7 +133,7 @@ export class App extends React.Component{
     
     if (window.performance) {
       if (performance.navigation.type === 1) {
-        if((window.location.pathname==='/reservation' || window.location.pathname==='/checkout') && localStorage.getItem('user')){
+        if((window.location.pathname===ROUTES_APP.RESERVATION || window.location.pathname===ROUTES_APP.CHECKOUT) && localStorage.getItem('user')){
           this.unlockAllSeats();
           if(JSON.parse(localStorage.getItem('user')).admin) return;//if admin then not timer
           socket.removeAllListeners('countdownStart');
@@ -150,10 +144,10 @@ export class App extends React.Component{
           socket.emit('countdownStart',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null },(clockFinishMessage)=>{
             this.unlockAllSeats();
             socket.removeAllListeners('countdownStart');
-            history.push('/reservation');
+            history.push(ROUTES_APP.RESERVATION);
           });
         }else{
-          if(!(window.location.pathname==='/checkout')){
+          if(!(window.location.pathname===ROUTES_APP.CHECKOUT)){
             this.unlockAllSeats();
           }
           socket.emit('close-timer',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null });
@@ -179,7 +173,7 @@ export class App extends React.Component{
   async onRouteChanged(route_) {
     const { setStateSeat, setClockTime, history, removeAllAlerts } = this.props;    
     removeAllAlerts();
-    if(route_==='/reservation'){
+    if(route_===ROUTES_APP.RESERVATION){
       await this.setState({ loading: true });
       await socket.emit('connected',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null },(initialStage)=>{
         initialStage.forEach(seat=>{
@@ -189,8 +183,8 @@ export class App extends React.Component{
       }); 
       //
     }
-    if((route_==='/reservation' || route_==='/checkout') && localStorage.getItem('user')){
-      if(!(route_==='/checkout')){
+    if((route_===ROUTES_APP.RESERVATION || route_===ROUTES_APP.CHECKOUT) && localStorage.getItem('user')){
+      if(!(route_===ROUTES_APP.CHECKOUT)){
         await this.unlockAllSeats();
       }
       
@@ -203,11 +197,11 @@ export class App extends React.Component{
         socket.emit('countdownStart',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null },(clockFinishMessage)=>{
           this.unlockAllSeats();
           socket.removeAllListeners('countdownStart');
-          history.push('/reservation');
+          history.push(ROUTES_APP.RESERVATION);
         });
       }
     }else{
-      if(!(route_==='/checkout')){
+      if(!(route_===ROUTES_APP.CHECKOUT)){
         this.unlockAllSeats();
       }
       socket.emit('close-timer',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null });
@@ -234,14 +228,14 @@ export class App extends React.Component{
           <Switch>
           <Route 
               exact 
-              path="/" 
+              path={ROUTES_APP.ROOT} 
               component={LandingPage}
             />
             <Route 
               path='/one-single-payment' 
               render={()=><OneSinglePaymentPage/>} 
             />
-            <Route  path='/reservation' render={()=>{   
+            <Route  path={ROUTES_APP.RESERVATION} render={()=>{   
                                                     return <SeatReservationPage/>
                                                 }}
               />
@@ -258,7 +252,7 @@ export class App extends React.Component{
             <Route  path='/paymentresult/:status/:reason' component={TransactionResultPage}/>
             <Route 
               exact 
-              path="/checkout" 
+              path={ROUTES_APP.CHECKOUT} 
               render={() =>{
                     console.log(cartItemsCount);
                     return !cartItemsCount? (
@@ -272,7 +266,7 @@ export class App extends React.Component{
 
             <Route 
               exact 
-              path="/signinsignup" 
+              path={ROUTES_APP.SIGNIN_SIGNUP}
               render={() =>
                 currentUser? (
                   <Redirect to='/select'/>

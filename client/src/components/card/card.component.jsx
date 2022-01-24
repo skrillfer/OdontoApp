@@ -8,6 +8,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { CONST_SPEAKERS_ENUM } from '../../assets/constants';
 import { setSpeaker, setCourse } from '../../redux/stage/stage.actions';
 
+import { ROUTES_APP } from "../../assets/routes.constants";
 
 
 import './card.styles.css';
@@ -24,7 +25,7 @@ const Card = ({ imgURL, title, paragraph, speaker, setSpeaker, setCourse, histor
                     speaker===CONST_SPEAKERS_ENUM.both?
                     CONST_SPEAKERS_ENUM.kim
                     :speaker)
-                history.push('/reservation')
+                history.push(ROUTES_APP.RESERVATION)
                 }}
         >
   

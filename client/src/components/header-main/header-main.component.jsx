@@ -15,6 +15,7 @@ import { setStateSeat, setSpeaker, setCourse, setOptionSigninSignup } from '../.
 
 import { CONST_SEAT_STATES, CONST_SPEAKERS_ENUM } from '../../assets/constants';
 import { getAmountSeatsOfCourse } from '../../redux/cart/cart.utils';
+import { ROUTES_APP } from "../../assets/routes.constants";
 
 import './header-main.styles.css';
 
@@ -49,7 +50,7 @@ class HeaderMain  extends React.Component{
     const { itemsCount, currentUser, history, setCurrentUser, conexionSocket, setCourse, setSpeaker, cartItems, speaker, setOptionSigninSignup } = this.props;
     let amount_KANO = getAmountSeatsOfCourse(cartItems,'KANO');
     let amount_KIM  = getAmountSeatsOfCourse(cartItems,'KIM');
-    let conditionButtonShop = (speaker===CONST_SPEAKERS_ENUM.both? (amount_KANO===1 && amount_KIM===1): (itemsCount?true:false)) && window.location.pathname!=='/checkout';
+    let conditionButtonShop = (speaker===CONST_SPEAKERS_ENUM.both? (amount_KANO===1 && amount_KIM===1): (itemsCount?true:false)) && window.location.pathname!==ROUTES_APP.CHECKOUT;
     return(
       <div className="header-custom">
         
@@ -65,7 +66,7 @@ class HeaderMain  extends React.Component{
             :
             <li>
               <Link 
-                to="/signinsignup" 
+                to={ROUTES_APP.SIGNIN_SIGNUP} 
                 className="btn btn-orange fadein"
                 style={{maxWidth:'200px'}}
                 onClick={() => { this.collapseClick(); setOptionSigninSignup(false);}}>
@@ -75,25 +76,25 @@ class HeaderMain  extends React.Component{
             
           }
           <li >
-            <Link to="/" onClick={() => { this.collapseClick(); }}>Inicio</Link>
+            <Link to={ROUTES_APP.ROOT} onClick={() => { this.collapseClick(); }}>Inicio</Link>
           </li>
           
           <li>
-                <Link to="/one-single-payment"  onClick={() => { this.collapseClick(); }} >Pagos Manuales</Link>
+                <Link to={ROUTES_APP.ONE_SINGLE_PAYMENT}  onClick={() => { this.collapseClick(); }} >Pagos Manuales</Link>
           </li>
               
           <li>
-              <Link to="/select"  onClick={() => { this.collapseClick(); }} >Seleccionar Curso</Link>
+              <Link to={ROUTES_APP.SELECT}  onClick={() => { this.collapseClick(); }} >Seleccionar Curso</Link>
           </li>
           {currentUser?
             <React.Fragment>    
               {currentUser.admin?<li >
-                <Link to="/report"  onClick={() => { this.collapseClick(); }} >Reporte</Link>
+                <Link to={ROUTES_APP.REPORT}  onClick={() => { this.collapseClick(); }} >Reporte</Link>
               </li>:null}
               {conditionButtonShop?
                 <li>
                   <Link 
-                        to="/checkout" 
+                        to={ROUTES_APP.CHECKOUT} 
                         className="btn btn-orange fadein buy-btn"
                         style={{maxWidth:'200px'}}
                         onClick={() => { this.collapseClick(); }}>
@@ -117,7 +118,7 @@ class HeaderMain  extends React.Component{
                     conexionSocket.emit('close-timer',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null });
                     conexionSocket.removeAllListeners('countdownStart');
                     await this.unlockAllSeats();
-                    history.push('/reservation');
+                    history.push(ROUTES_APP.RESERVATION);
                   }
                 }>
                 <Link to="#" className="signout" style={{fontStyle:'italic'}} onClick={() => { this.collapseClick(); }}>CERRAR SESION</Link>

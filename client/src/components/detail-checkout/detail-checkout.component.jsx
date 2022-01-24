@@ -13,7 +13,10 @@ import IframeComponent from '../iframe-component/iframe.component';
 
 import Clock from '../clock/clock.component';
 import  { inputValidMessages } from '../../assets/constants';
+import { ROUTES_APP } from "../../assets/routes.constants";
+
 import './detail-checkout.styles.css';
+
 
 // var enviroment = "marlin";
 var enviroment = "ecm";
@@ -101,7 +104,7 @@ class DetailCheckout extends React.Component{
                     conexionSocket.removeAllListeners('countdownStart');
                     conexionSocket.emit('close-timer',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null });
                     clearItemsCart();
-                    history.push('/reservation');
+                    history.push(ROUTES_APP.RESERVATION);
                     console.log(response);
                 }
             })
