@@ -21,10 +21,10 @@ services:
       MYSQL_HOST: localhost
 
   nginx:
-    image: skrillfer/odontoapp-nginx:1.0.9
+    image: skrillfer/odontoapp-nginx:1.2.0
     depends_on:
       - api
-      - client
+      # - client
     restart: always
     build:
       dockerfile: Dockerfile
@@ -33,7 +33,7 @@ services:
       - "80:80"
       # 3050
   api:
-    image: skrillfer/odontoapp-api:1.0.9
+    image: skrillfer/odontoapp-api:1.2.0
     build:
       dockerfile: Dockerfile
       context: "./server"
@@ -46,17 +46,17 @@ services:
       <<: *common-variables
       MYSQL_HOST_IP: mysql_db
 
-  client:
-    image: skrillfer/odontoapp-client:1.0.9
-    stdin_open: true
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    build:
-      dockerfile: Dockerfile
-      context: ./client
-    volumes:
-      - /app/node_modules
-      - ./client:/app
+  # client:
+  #   image: skrillfer/odontoapp-client:1.0.9
+  #   stdin_open: true
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ./client
+  #   volumes:
+  #     - /app/node_modules
+  #     - ./client:/app
 
   adminer:
       image: adminer:latest

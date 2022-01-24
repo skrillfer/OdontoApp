@@ -50,14 +50,14 @@ export class App extends React.Component{
     super(props);
     this.state  = { ...initialState };
     if (process.env.NODE_ENV === 'development') {
+      console.log(process.env.REACT_APP_SOCKET_URL)
       socket = io({ path: "/socket.io" });
 
       // socket = io.connect(process.env.REACT_APP_SOCKET_URL || 'http://api', { forceNew: true, path: '/ws/socket.io' });
       // console.log(socket);
     }else {
-      socket = io.connect(process.env.REACT_APP_SOCKET_URL,{
-        secure: true
-      });
+      console.log(process.env.REACT_APP_SOCKET_URL)
+      socket = io.connect(process.env.REACT_APP_SOCKET_URL);
     }
 
     socket.on( 'connect', function () {
