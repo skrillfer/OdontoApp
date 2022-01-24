@@ -83,6 +83,7 @@ export class App extends React.Component{
     });
 
     socket.emit('connected',{ user:localStorage.getItem('user')?{...JSON.parse(localStorage.getItem('user'))}:null },(initialStage)=>{
+      console.log(initialStage)
       initialStage.forEach(seat=>{
         setStateSeat(seat);
       });
